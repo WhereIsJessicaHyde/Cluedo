@@ -15,7 +15,7 @@ $(function() {
     $("#characters .back").html(misteryEnvelope[0].first_name + " " + misteryEnvelope[0].last_name);
     $("#weapons .back").html(misteryEnvelope[1].name);
     $("#rooms .back").html(misteryEnvelope[2].name);
-    $(".card").css( "transform",'rotateY(' + 180 + 'deg)');
+    $(".card").css({ WebkitTransform: 'rotateY(' + 360 + 'deg)'});
     repartir = $(".card").css("transform");
     console.log(repartir)
     $(".repartir").css("display","none");
