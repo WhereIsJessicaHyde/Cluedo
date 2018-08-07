@@ -9,33 +9,36 @@ a card). Esto hara que las 3 cartas se den la vuelta
 */
 $(function() {
 
-  var repartir;
-  $(".repartir").click(function() {
+    var check = false;
+    $(".repartir").click(function() {
     pickMistery();
     $("#characters .back").html(misteryEnvelope[0].first_name + " " + misteryEnvelope[0].last_name);
     $("#weapons .back").html(misteryEnvelope[1].name);
     $("#rooms .back").html(misteryEnvelope[2].name);
     $(".card").css({ WebkitTransform: 'rotateY(' + 180 + 'deg)'});
-    repartir = $(".card").css("transform");
     $(".repartir").html("re-repartir")
     setTimeout(function(){
       $(".card").css({ WebkitTransform: 'rotateY(' + 360 + 'deg)'});
     },2000)
   });
 
+
   $(".ocultar").click(function() {
 
-    if (repartir == "matrix(1, 0, 0, 1, 0, 0)") {
+    if (check) {
       $(".card").css({ WebkitTransform: 'rotateY(' + 360 + 'deg)'});
+      check = false;
     }
     else {};
   });
 
   $(".enseñar").click(function() {
 
-    if (repartir == "matrix(1, 0, 0, 1, 0, 0)") {
+    if (check == false) {
       $(".card").css({ WebkitTransform: 'rotateY(' + 180 + 'deg)'});
+      check = true;
     }
     else {};
   });
+  console.log(check)
 });
