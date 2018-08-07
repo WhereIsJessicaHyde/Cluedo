@@ -15,23 +15,9 @@ $(function() {
     $("#characters .back").html(misteryEnvelope[0].first_name + " " + misteryEnvelope[0].last_name);
     $("#weapons .back").html(misteryEnvelope[1].name);
     $("#rooms .back").html(misteryEnvelope[2].name);
-    $(".card").css({ WebkitTransform: 'rotateY(' + 360 + 'deg)'});
+    $(".card").css({ WebkitTransform: 'rotateY(' + 180 + 'deg)'});
     repartir = $(".card").css("transform");
-    console.log(repartir)
-    $(".repartir").css("display","none");
-    $(".volver-a-repartir").css("display","inline-block")
-    setTimeout(function(){
-      $(".card").css({ WebkitTransform: 'rotateY(' + 360 + 'deg)'});
-    },2000)
-  });
-  $(".volver-a-repartir").click(function() {
-
-    pickMistery();
-    $("#characters .back").html(misteryEnvelope[0].first_name + " " + misteryEnvelope[0].last_name);
-    $("#weapons .back").html(misteryEnvelope[1].name);
-    $("#rooms .back").html(misteryEnvelope[2].name);
-    $(".card").css( "transform",'rotateY(' + 180 + 'deg)');
-    volverArepartir = $(".card").css("transform");
+    $(".repartir").html("re-repartir")
     setTimeout(function(){
       $(".card").css({ WebkitTransform: 'rotateY(' + 360 + 'deg)'});
     },2000)
